@@ -621,7 +621,7 @@ def gameSelect(legends, preEvosGen1, evoChoice = None, monSelect=None, postGameL
 
             print("Invalid option, please enter a game from the list")
 
-(testing())
+
 
 
 print("Welcome to the pokemon team randomiser")
