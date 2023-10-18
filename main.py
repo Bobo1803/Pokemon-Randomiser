@@ -102,6 +102,24 @@ preEvosGen1 = ["Bulbasaur", "Ivysaur", "Charmander", "Charmeleon", "Squirtle", "
                "Majikarp", "Eevee", "Omanyte", "Kabuto",
                "Dratini", "Dragonair"]
 
+preEvosGen2 =  ["Chikorita", "Bayleef", "Cyndaquill", "Quilava", "Totodile", "Croconaw", "Pidgey", "Pidgeotto",
+            "Spearow", "Hoothoot", "Rattata",  "Sentret","Pichu", "Pikachu", "Caterpie", "Metapod",
+            "Weedle", "Kakuna", "Ledyba", "Geodude", "Graveler",  "Zubat", "Golbat", "Cleffa", "Clefairy",
+             "Jigglypuff", "Igglybuff", "Togepi", "Sandshrew", "Ekans", "Dunsparce", "Mareep", "Flaafy", "Wooper",
+             "Ghastly", "Haunter", "Unown", "Onix", "Bellsprout", "Weepinbell", "Hoppip", "Skiploom", "Paras",
+            "Poliwag", "Poliwhirl", "Majikarp", "Goldeen", "Slowpoke", "Oddish", "Gloom",
+             "Bellossom", "Drowzee", "Abra", "Kadabra" , "Ditto", "Pineco", "Nidoran F", "Nidorina", "Nidoran M",
+            "Nidorino",  "Yanma", "Sunkern", "Exeggcute",  "Sudowoodo", "Wobbuffet", "Venonat",  "Scyther",
+            "Pinsir", "Heracross", "Koffing",  "Grimer", "Magnemite", "Voltorb", "Aipom",  "Snubbul",
+            "Vulpix", "Stantler", "Marill", "Diglett", "Meowth", "Psyduck",
+            "Machop", "Machoke", "Tyrogue", "Girafarig", "Tauros", "Miltank", "Magby","Smoochum", "Elekid",
+            "Mr Mime", "Smeargle", "Farfetch'd", "Natu", "Qwilfish", "Tentacool", "Krabby", "Shuckle", "Staryu", "Shellder",
+             "Corsola", "Remoraid","Chinchou", "Seel", "Lickitung", "Tangela", "Eevee",
+            "Horsea", "Seadra", "Delibird" , "Swinub", "Phanphy", "Skarmory", "Doduo", "Ponyta",
+            "Cubone", "Kangaskhan", "Rhyhorn", "Murkrow", "Houndour", "Slugma", "Sneasel", "Misdreavus", "Porygon", "Chansey",
+             "Lapras", "Aerodactyl", "Snorlax",
+             "Raikou", "Entei", "Suicune", "Dratini", "Dragonair", "Larvitar", "Pupitar", "Lugia", "Ho-oh"]
+
 # lists of pokemon for each game
 
 Ymons = ["Bulbasaur", "Ivysaur", "Venusaur", "Charmander", "Charmeleon", "Charizard", "Squirtle", "Wartortle",
@@ -164,18 +182,40 @@ Bmons = ["Bulbasaur", "Ivysaur", "Venusaur", "Charmander", "Charmeleon", "Chariz
 
 goldMons = ["Chikorita", "Bayleef", "Meganium", "Cyndaquill", "Quilava", "Typhlosion", "Totodile", "Croconaw", "Feraligatr", "Pidgey", "Pidgeotto", "Pidgeot",
             "Spearow", "Fearow", "Hoothoot", "Noctowl", "Rattata", "Raticate", "Sentret", "Furret", "Pichu", "Pikachu", "Raichu", "Caterpie", "Metapod", "Butterfree",
-            "Weedle", "Kakuna", "Beedrill", "Ledyba", "Ledian", "Spinarak", "Ariados", "Geodude", "Graveler", "Golem", "Zubat", "Golbat", "Crobat", "Cleffa", "Clefairy",
-            "Clefable", "Jigglypuff", "Igglybuff", "Togepi", "Togetic", "Sandshrew", "Sandslash", "Ekans", "Arbok", "Dunsparce", "Mareep", "Flaafy", "Ampharos", "Wooper",
+            "Weedle", "Kakuna", "Beedrill", "Spinarak", "Ariados", "Geodude", "Graveler", "Golem", "Zubat", "Golbat", "Crobat", "Cleffa", "Clefairy",
+            "Clefable", "Jigglypuff", "Igglybuff","Wigglytuff", "Togepi", "Togetic", "Sandshrew", "Sandslash", "Ekans", "Arbok", "Dunsparce", "Mareep", "Flaafy", "Ampharos", "Wooper",
             "Quagsire", "Ghastly", "Haunter", "Gengar", "Unown", "Onix", "Steelix", "Bellsprout", "Weepinbell", "Victreebel", "Hoppip", "Skiploom", "Jumpluff", "Paras",
             "Parasect", "Poliwag", "Poliwhirl", "Poliwrath", "Politoed", "Majikarp", "Gyarados", "Goldeen", "Seaking", "Slowpoke", "Slowbro", "Slowking", "Oddish", "Gloom",
             "Vileplume", "Bellossom", "Drowzee", "Hypno", "Abra", "Kadabra" , "Alakazam", "Ditto", "Pineco", "Forretress", "Nidoran F", "Nidorina", "Nidoqueen", "Nidoran M",
-            "Nidorino", "Nidoking", "Yanma", "Yanmega", "Sunkern", "Sunflora", "Exeggcute", "Exeggutor", "Sudowoodo", "Wobbuffet", "Venonat", "Venomoth", "Scyther", "Scizor",
+            "Nidorino", "Nidoking", "Yanma", "Sunkern", "Sunflora", "Exeggcute", "Exeggutor", "Sudowoodo", "Wobbuffet", "Venonat", "Venomoth", "Scyther", "Scizor",
             "Pinsir", "Heracross", "Koffing", "Weezing", "Grimer", "Muk", "Magnemite", "Magneton", "Voltorb", "Electrode", "Aipom", "Ambipom", "Snubbul", "Granbull",
-            "Vulpix", "Ninetales", "Growlithe", "Arcanine", "Stantler", "Marill", "Azumarill", "Diglett", "Dugtrio", "Mankey", "Primeape", "Meowth", "Persian", "Golduck", "Psyduck",
+             "Growlithe", "Arcanine", "Stantler", "Marill", "Azumarill", "Diglett", "Dugtrio", "Mankey", "Primeape", "Golduck", "Psyduck",
             "Machop", "Machoke", "Machamp", "Tyrogue", "Hitmonlee", "Hitmonchan", "Hitmontop", "Girafarig", "Tauros", "Miltank", "Magby", "Magmar", "Smoochum", "Jynx", "Elekid",
             "Electabuzz", "Mr Mime", "Smeargle", "Farfetch'd", "Natu", "Xatu", "Qwilfish", "Tentacool", "Tentacruel", "Krabby", "Kingler", "Shuckle", "Staryu", "Starmie", "Shellder",
             "Cloyster", "Corsola", "Remoraid", "Octillery", "Chinchou", "Lanturn", "Seel", "Dewgong", "Lickitung", "Tangela", "Eevee", "Vaporeon", "Jolteon", "Flareon", "Espeon", "Umbreon",
-            "Horsea", "Seadra", "Kingdra", "Gligar", "Delibird" , "Swinub", "Piloswine", "Teddiursa", "Ursaring", "Phanphy", "Donphan",]
+            "Horsea", "Seadra", "Kingdra", "Gligar", "Delibird" , "Swinub", "Piloswine", "Teddiursa", "Ursaring", "Mantine", "Doduo", "Dodrio", "Ponyta",
+            "Rapidash", "Cubone", "Marowak", "Kangaskhan", "Rhyhorn", "Rhydon", "Murkrow", "Houndour", "Houndoom", "Slugma", "Magcargo", "Sneasel", "Misdreavus", "Porygon", "Porygon2", "Chansey",
+            "Blissey", "Lapras", "Aerodactyl", "Snorlax",
+             "Raikou", "Entei", "Suicune", "Dratini", "Dragonite", "Dragonair", "Larvitar", "Pupitar", "Tyranitar", "Lugia", "Ho-oh"]
+
+silverMons = ["Chikorita", "Bayleef", "Meganium", "Cyndaquill", "Quilava", "Typhlosion", "Totodile", "Croconaw", "Feraligatr", "Pidgey", "Pidgeotto", "Pidgeot",
+            "Spearow", "Fearow", "Hoothoot", "Noctowl", "Rattata", "Raticate", "Sentret", "Furret", "Pichu", "Pikachu", "Raichu", "Caterpie", "Metapod", "Butterfree",
+            "Weedle", "Kakuna", "Beedrill", "Ledyba", "Ledian", "Geodude", "Graveler", "Golem", "Zubat", "Golbat", "Crobat", "Cleffa", "Clefairy",
+            "Clefable", "Jigglypuff", "Igglybuff", "Wigglytuff", "Togepi", "Togetic", "Sandshrew", "Sandslash", "Ekans", "Arbok", "Dunsparce", "Mareep", "Flaafy", "Ampharos", "Wooper",
+            "Quagsire", "Ghastly", "Haunter", "Gengar", "Unown", "Onix", "Steelix", "Bellsprout", "Weepinbell", "Victreebel", "Hoppip", "Skiploom", "Jumpluff", "Paras",
+            "Parasect", "Poliwag", "Poliwhirl", "Poliwrath", "Politoed", "Majikarp", "Gyarados", "Goldeen", "Seaking", "Slowpoke", "Slowbro", "Slowking", "Oddish", "Gloom",
+            "Vileplume", "Bellossom", "Drowzee", "Hypno", "Abra", "Kadabra" , "Alakazam", "Ditto", "Pineco", "Forretress", "Nidoran F", "Nidorina", "Nidoqueen", "Nidoran M",
+            "Nidorino", "Nidoking", "Yanma", "Sunkern", "Sunflora", "Exeggcute", "Exeggutor", "Sudowoodo", "Wobbuffet", "Venonat", "Venomoth", "Scyther", "Scizor",
+            "Pinsir", "Heracross", "Koffing", "Weezing", "Grimer", "Muk", "Magnemite", "Magneton", "Voltorb", "Electrode", "Aipom", "Ambipom", "Snubbul", "Granbull",
+            "Vulpix", "Ninetales", "Stantler", "Marill", "Azumarill", "Diglett", "Dugtrio", "Meowth", "Persian", "Golduck", "Psyduck",
+            "Machop", "Machoke", "Machamp", "Tyrogue", "Hitmonlee", "Hitmonchan", "Hitmontop", "Girafarig", "Tauros", "Miltank", "Magby", "Magmar", "Smoochum", "Jynx", "Elekid",
+            "Electabuzz", "Mr Mime", "Smeargle", "Farfetch'd", "Natu", "Xatu", "Qwilfish", "Tentacool", "Tentacruel", "Krabby", "Kingler", "Shuckle", "Staryu", "Starmie", "Shellder",
+            "Cloyster", "Corsola", "Remoraid", "Octillery", "Chinchou", "Lanturn", "Seel", "Dewgong", "Lickitung", "Tangela", "Eevee", "Vaporeon", "Jolteon", "Flareon", "Espeon", "Umbreon",
+            "Horsea", "Seadra", "Kingdra", "Delibird" , "Swinub", "Piloswine", "Phanphy", "Donphan", "Skarmory", "Doduo", "Dodrio", "Ponyta",
+            "Rapidash", "Cubone", "Marowak", "Kangaskhan", "Rhyhorn", "Rhydon", "Murkrow", "Houndour", "Houndoom", "Slugma", "Magcargo", "Sneasel", "Misdreavus", "Porygon", "Porygon2", "Chansey",
+            "Blissey", "Lapras", "Aerodactyl", "Snorlax",
+             "Raikou", "Entei", "Suicune", "Dratini", "Dragonite", "Dragonair", "Larvitar", "Pupitar", "Tyranitar", "Lugia", "Ho-oh"]
+
 
 
 gen1TradeEvo = ["Alakazam", "Machamp", "Golem", "Gengar"]
@@ -612,6 +652,17 @@ def gameSelect(legends, preEvosGen1, evoChoice = None, monSelect=None, postGameL
 
             teamSelectionAction(teamNoSelect, monSelect, selectCount=None)
 
+        elif gameChoice == "gold" or gameChoice == "Gold" or gameChoice == "4":
+
+            print("Gold version selected")
+
+            listSelect = goldMons
+
+            legendSelectOperation(legendSelection)
+
+            evoAllowSelect(evosAllowed, preEvosGenSelect, evoChoice)
+
+            tradeEvoOperation(tradeEvosSelection, evoChoice)
 
 
 
