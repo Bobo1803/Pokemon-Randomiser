@@ -20,6 +20,7 @@ from test import testing
 #function to allow for a starter to be chosen (do this twice for x and y)
 #add function to decide wheather to allow baby pokemon
 #maybe have a function to turn off pokemon that can only be obtained if bred as they are obtained at very low level
+#add function to force starter
 
 ### lists of removeable items
 
@@ -168,7 +169,7 @@ Bmons = ["Bulbasaur", "Ivysaur", "Venusaur", "Charmander", "Charmeleon", "Chariz
          "Golbat", "Paras", "Parasect", "Venonat", "Venomoth", "Diglett", "Dugtrio", "Meowth", "Persian"
          "Psyduck", "Golduck", "Poliwag", "Poliwhirl", "Poliwrath",
          "Abra", "Kadabra", "Alakazam", "Machop", "Machoke", "Machamp", "Tentacool", "Tentacruel", "Geodude", "Graveler", "Golem", "Ponyta",
-         "Rapidash", "Bellsprout", "Weepinbell", "Victreebel"
+         "Rapidash", "Bellsprout", "Weepinbell", "Victreebel",
          "Slowpoke", "Slowbro", "Magnemite", "Magneton", "Farfetch'd", "Doduo", "Dodrio", "Seel", "Dewgong", "Grimer",
          "Muk", "Shellder", "Cloyster",
          "Gastly", "Haunter", "Gengar", "Onix", "Drowzee", "Hypno", "Krabby", "Kingler", "Voltorb", "Electrode", "Koffing", "Weezing",
@@ -228,6 +229,15 @@ gen1PostGameMons = ["Mewtwo"]
 ifBulbsasaur = ["Squirtle", "Wartortle","Blastoise", "Charmander", "Charmeleon", "Charizard"]
 ifSquirtle = ["Bulbasuar", "Ivysaur", "Venusaur", "Charmander", "Charmeleon", "Charizard"]
 ifCharmander = ["Bulbasuar", "Ivysaur", "Venusaur", "Squirtle", "Wartortle","Blastoise"]
+
+starterPreEvos = ["Squirtle", "Wartortle", "Bulbasuar", "Ivysaur", "Charmander", "Charmeleon", "Chikorita", "Bayleef", "Cyndaquill", "Quilava", "Totodile", "Crocanaw",
+                  "Treecko", "Grovyle", "Torchic", "Combusken", "Mudkip", "Marshtomp", "Turtwig", "Grotle","Chimchar",
+                  "Monferno", "Piplup", "Prinplup", "Snivy", "Servine", "Tepig", "Pignite", "Oshawott", "Dewott", "Chespin", "Quilladin",
+                  "Fennekin", "Braixen", "Froakie", "Frogadier", "Rowlet", "Dartrix", "Litten", "Torracat", "Popplio", "Brionne",
+                  "Grookey", "Thwackey", "Scorbunny", "Raboot", "Sobble", "Drizzile", "Sprigatito", "Floragato", "Fuecoco", "Crocalor",
+                  "Quaxly", "Quaxwell"]
+gen1start = ["Squirtle", "Wartortle","Blastoise", "Charmander", "Charmeleon", "Charizard", "Bulbasuar", "Ivysaur", "Venusaur"]
+
 
 
 
@@ -387,6 +397,47 @@ def legendSelectOperation(legendSelection):
         else:
             print("invalid input")
 
+def forceStarter(starterForceAllowed, gameSelection, startChoice, starterChoice, evoChoice):
+
+
+
+    global listSelect
+    global starterListChoice
+
+
+    if gameSelection == 1:
+
+        starterListChoice = gen1start
+
+
+
+
+
+    while starterForceAllowed == "Unspecified":
+
+        startChoice = input("Do you want to have a starter pokemon?")
+
+        if startChoice == "Yes" or startChoice == "yes":
+
+            if evoChoice == "yes" or evoChoice == "Yes":
+
+                starterChoice = [i for i in starterListChoice if i not in starterPreEvos]
+
+            starterChoice = random.choice(starterChoice)
+
+            print(starterChoice)
+
+            starterForceAllowed = "Specified"
+
+
+        elif startChoice == "No" or startChoice == "no":
+
+            starterForceAllowed = "Specified"
+
+        else:
+
+            print("Ivalid input, please enter yes or no")
+
 
 def evoAllowSelect(evosAllowed, preEvosGenSelect, evoChoice):
 
@@ -451,10 +502,13 @@ def tradeEvoOperation(tradeEvosSelection, evoChoice):
 
                 print("Invalid input, please enter yes or no")
 
-def teamSelectionAction(teamNoSelect, monSelect, selectCount=None):
+def teamSelectionAction(teamNoSelect, monSelect,evoChoice, selectCount, startChoice = None, gameSelection = None,  starterChoice = True):
 #make a different team select action for each gen because of differing functions required
 #possible index error when using this function. use error handling to sort this out (Try + except)
     global listSelect
+
+    starterForceAllowed = "Unspecified"
+
 
     while teamNoSelect == "Unspecified":
 
@@ -462,10 +516,16 @@ def teamSelectionAction(teamNoSelect, monSelect, selectCount=None):
 
             monCount = int(input("From 1-6, how many pokemon do you want in your team?"))
 
+            selectCount = 0
+
             if monCount in range(1, 7):
                 teamNoSelect = "Specified"
 
-                selectCount = 0
+
+
+
+
+
 
                 while selectCount < monCount:
 
@@ -487,7 +547,7 @@ def teamSelectionAction(teamNoSelect, monSelect, selectCount=None):
 
                     except IndexError :
 
-                        print("test error")
+                           print("test error")
 
 
 
@@ -536,7 +596,10 @@ def gen1PostGameSelect(postGameAllowed, gameChoice, postGameList):
 
 
 
-def gameSelect(legends, preEvosGen1, evoChoice = None, monSelect=None, postGameList=None):
+def gameSelect(legends, preEvosGen1, selectCount ,evoChoice = None, monSelect=None, postGameList=None,
+               startChoice=None, starterChoice = None):
+
+
 
     global listSelect
     tradeEvosSelection = "Unspecified"
@@ -545,44 +608,45 @@ def gameSelect(legends, preEvosGen1, evoChoice = None, monSelect=None, postGameL
     evosAllowed = "Unspecified"
     postGameAllowed = "Unspecified"
     poryCheck = "Unspecified"
+
     gameSelection = 0
     while gameSelection == 0:
         gameChoice = input("""Enter these numbers to choose a game:
                            1.Yellow
                            2.Red
-                           3.Blue
-                           4.Gold
-                           5.Silver
-                           6.Crystal
-                           7.Ruby
-                           8.Saphire
-                           9.Emerald
-                           10.Fire red
-                           11.Leaf Green
-                           12.Diamond
-                           13.Pearl
-                           14.Platinum
-                           15.HeartGold
-                           16.SoulSilver
-                           17.Black
-                           18.White
-                           19.Black 2
-                           20.White 2
-                           21.X
-                           22.Y
-                           23.Omega Ruby
-                           24.Alpha Saphire
-                           25.Sun
-                           26.Moon
-                           27.Ultra Sun
-                           28.Ultra Moon
-                           29.Sword
-                           30.Shield
-                           31.Brilliant Diamond
-                           32.Shining Pearl
-                           33.Legends Arceus
-                           34.Scarlet
-                           35.Violet""")
+                           3.Blue""")
+                           #4.Gold
+                           #5.Silver
+                           #6.Crystal
+                           #7.Ruby
+                           #8.Saphire
+                           #9.Emerald
+                           #10.Fire red
+                           #11.Leaf Green
+                           #12.Diamond
+                           #13.Pearl
+                           #14.Platinum
+                           #15.HeartGold
+                           #16.SoulSilver
+                           #17.Black
+                           #18.White
+                           #19.Black 2
+                           #20.White 2
+                           #21.X
+                           #22.Y
+                           #23.Omega Ruby
+                           #24.Alpha Saphire
+                           #25.Sun
+                           #26.Moon
+                           #27.Ultra Sun
+                           #28.Ultra Moon
+                           #29.Sword
+                           #30.Shield
+                           #31.Brilliant Diamond
+                           #32.Shining Pearl
+                           #33.Legends Arceus
+                           #34.Scarlet
+                           #35.Violet""")
         #list of games, will take a while to add all of them becuase of all the quirks per game
 
         if gameChoice == "1" or gameChoice == "yellow" or gameChoice == "Yellow":
@@ -590,6 +654,8 @@ def gameSelect(legends, preEvosGen1, evoChoice = None, monSelect=None, postGameL
             gameSelection = 1
             #loop for game selecting is ended
             print("Yellow version selected")
+
+
 
             listSelect = Ymons
             #base list is selected
@@ -605,12 +671,15 @@ def gameSelect(legends, preEvosGen1, evoChoice = None, monSelect=None, postGameL
             # removal of post game pokemon if chosen
             gen1PorygonSelect(poryCheck)
             #choose to remove porygon because requirements to get pokemon are absurd
-            teamSelectionAction(teamNoSelect, monSelect, selectCount=None)
+
+            teamSelectionAction(teamNoSelect, monSelect, selectCount)
             #final action to select the team members
 
         elif gameChoice == "Red" or gameChoice == "red" or gameChoice == "2":
 
             gameSelection = 1
+
+
 
             print("Red version Selected")
 
@@ -628,7 +697,9 @@ def gameSelect(legends, preEvosGen1, evoChoice = None, monSelect=None, postGameL
 
             gen1PorygonSelect(poryCheck)
 
-            teamSelectionAction(teamNoSelect, monSelect, selectCount=None)
+
+            #function to force choosing a starter for the player
+            teamSelectionAction(teamNoSelect, monSelect, selectCount)
 
         elif gameChoice == "3" or gameChoice == "Blue" or gameChoice == "blue":
 
@@ -650,7 +721,7 @@ def gameSelect(legends, preEvosGen1, evoChoice = None, monSelect=None, postGameL
 
             gen1PorygonSelect(poryCheck)
 
-            teamSelectionAction(teamNoSelect, monSelect, selectCount=None)
+            teamSelectionAction(teamNoSelect, monSelect, startChoice, gameSelection, starterChoice, selectCount, evoChoice)
 
         elif gameChoice == "gold" or gameChoice == "Gold" or gameChoice == "4":
 
@@ -677,4 +748,4 @@ def gameSelect(legends, preEvosGen1, evoChoice = None, monSelect=None, postGameL
 
 print("Welcome to the pokemon team randomiser")
 
-gameSelect(legends, preEvosGen1, evoChoice=None, monSelect=None)
+gameSelect(legends, preEvosGen1, selectCount=None, evoChoice=None, monSelect=None)
